@@ -11,6 +11,10 @@ def chop(val, sorted_list):
         elif val < sorted_list[m]:
             return chop(val, head)
         else:
-            return len(head) + chop(val, tail)
+            result = chop(val, tail)
+            if result == -1:
+                return -1
+            else:
+                return len(head) + 1 + chop(val, tail)
     else:
         return -1
