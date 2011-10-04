@@ -11,6 +11,10 @@ def test_while_chop():
     from karate_chop import while_chop
     _test_chop(while_chop)
 
+def test_recursive1():
+    from karate_chop import recursive1_chop
+    _test_chop(recursive1_chop)
+
 def _test_chop(chop):
     assert_equal(-1, chop(3, []))
     assert_equal(-1, chop(3, [1]))

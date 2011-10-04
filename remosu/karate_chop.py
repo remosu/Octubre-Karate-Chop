@@ -30,6 +30,18 @@ def while_chop(val, sorted_list):
                 end = m - 1
             else:
                 start = m + 1
+    return -1
+
+def _rec1_chop(val, sorted_list, start, end):
+    if start > end:
         return -1
+    m = (start + end) / 2
+    if val == sorted_list[m]:
+        return m
+    elif val < sorted_list[m]:
+        return _rec1_chop(val, sorted_list, start, m - 1)
     else:
-        return -1
+        return _rec1_chop(val, sorted_list, m + 1, end)
+
+def recursive1_chop(val, sorted_list):
+    return _rec1_chop(val, sorted_list, 0, len(sorted_list) - 1)
