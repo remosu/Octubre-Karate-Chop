@@ -12,12 +12,9 @@ def recursive_chop(val, sorted_list):
             return recursive_chop(val, head)
         else:
             result = recursive_chop(val, tail)
-            if result == -1:
-                return -1
-            else:
+            if result > -1:
                 return len(head) + 1 + result
-    else:
-        return -1
+    return -1
 
 def while_chop(val, sorted_list):
     if sorted_list:
