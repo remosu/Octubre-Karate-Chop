@@ -1,11 +1,17 @@
-from karate_chop import chop
-
+    
 
 def assert_equal(val1, val2):
     assert val1 == val2
 
-def test_chop():
-    pass
+def test_recursive():
+    from karate_chop import recursive_chop
+    _test_chop(recursive_chop)
+
+def test_while_chop():
+    from karate_chop import while_chop
+    _test_chop(while_chop)
+
+def _test_chop(chop):
     assert_equal(-1, chop(3, []))
     assert_equal(-1, chop(3, [1]))
     assert_equal(0,  chop(1, [1]))
